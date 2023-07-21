@@ -26,6 +26,7 @@ import com.MovieCatalog.service.MovieService;
 @RestController
 @RequestMapping("/movies/v1")
 @CrossOrigin("*")
+//@CrossOrigin(origins = "http://localhost:4200") // Replace with your frontend origin
 public class MovieController {
 	
 	ResponseEntity<?> responseEntity;
@@ -88,6 +89,14 @@ public class MovieController {
 	            @RequestParam(defaultValue = "0") int page,
 	            @RequestParam(defaultValue = "10") int size
 	    ) {
+			Page<Movies> moviePage=this.movieService.getMoviesByGenre(genre, page, size);
+			
+			Map<String, Object> response=new HashMap<String, Object>();
+			response.put("data", moviePage	);
+			response.put("page", page);
+			response.put("size", size);
+			response.put("totalElements", moviePage.getTotalElements());
+			response.put("totalPages", moviePage.getTotalPages());
 	        return movieService.getMoviesByGenre(genre, page, size);
 	    }
 
