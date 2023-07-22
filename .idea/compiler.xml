@@ -11,11 +11,17 @@
         <module name="MovieReviewUserReg" />
         <module name="Reviews" />
         <module name="MovieReviewUserAuth" />
+        <module name="Eureka" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="EurekaServer" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Eureka" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
       <module name="MovieCatalog" options="-parameters" />
       <module name="MovieReviewUserAuth" options="-parameters" />
       <module name="MovieReviewUserReg" options="-parameters" />

@@ -14,9 +14,7 @@
         <module>Reviews</module>
 	<module>MovieReviewUserAuth</module>
 	<module>MovieReviewUserReg</module>
+        <module>Eureka</module>
        
     </modules>
-    
-    
-    
 </project>
